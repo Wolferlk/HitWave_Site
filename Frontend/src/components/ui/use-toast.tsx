@@ -1,8 +1,7 @@
-// src/components/ui/use-toast.tsx
-import { toast, ToastOptions } from 'react-toastify';
+import { toast, ToastOptions, ToastPosition } from 'react-toastify';
 
 // Define the types of positions
-const toastPositions = {
+const toastPositions: Record<string, ToastPosition> = {
   topLeft: "top-left",
   topCenter: "top-center",
   topRight: "top-right",
@@ -12,7 +11,7 @@ const toastPositions = {
 };
 
 const useToast = () => {
-  const showToast = (message: string, type: 'success' | 'error' | 'info' | 'warning', position: string = toastPositions.topCenter) => {
+  const showToast = (message: string, type: 'success' | 'error' | 'info' | 'warning', position: ToastPosition = toastPositions.topCenter) => {
     const options: ToastOptions = {
       position,
     };

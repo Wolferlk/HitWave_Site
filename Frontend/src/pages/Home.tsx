@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Music, Mic2, Award, Users, Star } from 'lucide-react';
+import { Play, Music, Mic2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 
