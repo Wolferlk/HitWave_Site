@@ -19,7 +19,7 @@ export default function AdminLogin() {
     setIsLoading(true);
 
     // Example of authentication logic (this is just a mock for demonstration)
-    if (email === 'admin@hitwaveproductions.com' && password === 'admin') {
+    if (email === 'admin@hitwave.com' && password === 'admin123') {
       showToast(
         "Login successful",
         'success',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Users, Music2, Mic2, Star, Trophy } from 'lucide-react';
+import { Award, Users, Music2,  Star, Trophy } from 'lucide-react';
 
 const stats = [
   { icon: Music2, value: "1000+", label: "Projects Completed" },
