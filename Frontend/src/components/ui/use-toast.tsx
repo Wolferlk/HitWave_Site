@@ -1,23 +1,37 @@
-// src/components/ui/use-toast.ts
-import { toast } from 'react-toastify';
+// src/components/ui/use-toast.tsx
+import { toast, ToastOptions } from 'react-toastify';
+
+// Define the types of positions
+const toastPositions = {
+  topLeft: "top-left",
+  topCenter: "top-center",
+  topRight: "top-right",
+  bottomLeft: "bottom-left",
+  bottomCenter: "bottom-center",
+  bottomRight: "bottom-right",
+};
 
 const useToast = () => {
-  const showToast = ({ title, description, variant = 'success' }: { title: string; description: string; variant?: 'success' | 'error' | 'info' | 'warning' }) => {
-    switch (variant) {
+  const showToast = (message: string, type: 'success' | 'error' | 'info' | 'warning', position: string = toastPositions.topCenter) => {
+    const options: ToastOptions = {
+      position,
+    };
+    
+    switch (type) {
       case 'success':
-        toast.success(`${title}: ${description}`, { position: toast.POSITION.TOP_CENTER });
+        toast.success(message, options);
         break;
       case 'error':
-        toast.error(`${title}: ${description}`, { position: toast.POSITION.TOP_CENTER });
+        toast.error(message, options);
         break;
       case 'info':
-        toast.info(`${title}: ${description}`, { position: toast.POSITION.TOP_CENTER });
+        toast.info(message, options);
         break;
       case 'warning':
-        toast.warning(`${title}: ${description}`, { position: toast.POSITION.TOP_CENTER });
+        toast.warning(message, options);
         break;
       default:
-        toast(`${title}: ${description}`, { position: toast.POSITION.TOP_CENTER });
+        toast(message, options);
         break;
     }
   };
